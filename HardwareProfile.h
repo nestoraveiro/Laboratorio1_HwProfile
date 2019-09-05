@@ -62,12 +62,14 @@
 
 //.........................................VECTORES Y PRIORIDADES..........................................
 //Interupcoionde con multi vectores
-#define INT_init() do {\INTCONbits.VS=1;\INTCONbits.MVEC=1;\}while(0); //REVISAR EL VS puede que no sea necesario
+#define INT_init() do {\INTCONbits.VS=1;\INTCONbits.MVEC=1;\} while(0); //REVISAR EL VS puede que no sea necesario
 //
-#define INT_init() do {\IPC2bits.CNCIP=2;
+#define INT_init() do {\IPC2bits.CNAIP=2;\IPC2bits.CNAIS=0;\} while(0); // Prioridad=2 y sub prioridad=0 del boton 2 (A)
+#define INT_init() do {\IPC2bits.CNBIP=2;\IPC2bits.CNBIS=0;\} while(0); // Prioridad=2 y sub prioridad=0 del boton 3 (B)
 
 
-\INTCONbits.MVEC=1;\}while(0); //REVISAR EL VS puede que no sea necesario
+
+
 
 
 #endif
